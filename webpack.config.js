@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const BUILD_STATS = !!process.env.BUILD_STATS;
 
@@ -60,7 +61,23 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
-    })
+    }),
+    new WorkboxPlugin.GenerateSW({
+      runtimeCaching: [
+        {
+          handler: 'CacheFirst',
+          urlPattern: /^https:\/\/ryotasugawara\.github\.io\/assets\/image\/[^\/\.]+\.jpg$/,
+          options: {
+            cacheName:'CacheFirst',
+            expiration: {
+              maxAgeSeconds: 86400,
+              maxEntries: 20
+            }
+          }
+        }
+      ],
+      swDest: `${__dirname}/dist/service-worker.js`
+    }),
   ]),
 
   optimization: {
