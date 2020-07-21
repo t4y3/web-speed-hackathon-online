@@ -7,3 +7,7 @@
   publish = "dist"
   functions = "functions"
   command = "yarn build && yarn run build:server"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
