@@ -11,7 +11,10 @@
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
-    "dev": "netlify-lambda serve lib/apis",
+    "dev": "run-p dev:*",
+    "dev:css": "postcss src/app.css -d dist -w",
+    "dev:js": "cross-env NODE_ENV=development webpack --config webpack.config.js -w",
+    "dev:server": "netlify-lambda serve lib/apis",
     "build:server": "netlify-lambda build lib/apis"
   },
   "devDependencies": {
