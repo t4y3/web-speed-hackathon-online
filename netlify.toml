@@ -5,6 +5,5 @@
 
 [build]
   publish = "dist"
-  command = "yarn build"
   functions = "functions"
-  command = "yarn run build:server"
+  command = "yarn build && yarn run build:server"
