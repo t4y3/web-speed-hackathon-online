@@ -6,7 +6,7 @@ export const ACTION_LIKE_UPDATED = 'LIKE_UPDATED';
 
 export async function fetchEntry({ dispatch, blogId, entryId }) {
   const entry = await fetch(
-    `${API_PATH}/.netlify/functions/api//blog/${blogId}/entry/${entryId}`,
+    `${API_PATH}/.netlify/functions/api/blog/${blogId}/entry/${entryId}`,
   );
 
   dispatch({
@@ -19,11 +19,11 @@ export async function fetchEntry({ dispatch, blogId, entryId }) {
 
 export async function likeEntry({ dispatch, blogId, entryId }) {
   await post(
-    `${API_PATH}/.netlify/functions/api//blog/${blogId}/entry/${entryId}/like`,
+    `${API_PATH}/.netlify/functions/api/blog/${blogId}/entry/${entryId}/like`,
   );
 
   const entry = await fetch(
-    `${API_PATH}/.netlify/functions/api//blog/${blogId}/entry/${entryId}`,
+    `${API_PATH}/.netlify/functions/api/blog/${blogId}/entry/${entryId}`,
   );
   const latestLikeCount = entry.like_count;
 

@@ -5,7 +5,7 @@ export const ACTION_ENTRY_LIST_FETCHED = 'ENTRY_LIST_FETCHED';
 
 export async function fetchEntryList({ dispatch, blogId }) {
   const entries = await fetch(
-    `${API_PATH}/.netlify/functions/api//blog/${blogId}/entries`,
+    `${API_PATH}/.netlify/functions/api/blog/${blogId}/entries`,
   );
 
   dispatch({
