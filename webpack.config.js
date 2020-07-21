@@ -4,8 +4,11 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
+
   entry: path.resolve(__dirname, 'src', 'app.js'),
 
   output: {
@@ -20,6 +23,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'SERVICE_ENV': JSON.stringify(process.env.SERVICE_ENV),
       // 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.USE_MOCK_DATA': JSON.stringify(process.env.USE_MOCK_DATA),
     }),
@@ -29,6 +33,11 @@ module.exports = {
       inject: false,
     }),
   ],
+
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 
   module: {
     rules: [
@@ -49,7 +58,5 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
-
-  mode: 'none',
+  // devtool: 'inline-source-map'
 };
