@@ -11,12 +11,13 @@
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
+    "dev:analyze": "BUILD_STATS=1 NODE_ENV=production SERVICE_ENV=local run-p dev:*",
     "dev": "NODE_ENV=production SERVICE_ENV=local run-p dev:*",
     "dev:css": "postcss src/app.css -d dist -w",
     "dev:js": "webpack --config webpack.config.js -w",
     "dev:server": "netlify-lambda serve lib/apis",
     "build:server": "netlify-lambda build lib/apis",
-    "analyze": "webpack-bundle-analyzer build/bundle-stats.json"
+    "analyze": "webpack-bundle-analyzer build/stats/app.json"
   },
   "browserslist": [
     "last 1 Chrome versions"
@@ -70,7 +71,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "immutable": "^4.0.0-rc.12",
-    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
     "netlify-lambda": "^2.0.0",
