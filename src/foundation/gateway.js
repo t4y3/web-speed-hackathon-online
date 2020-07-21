@@ -16,7 +16,10 @@ export async function fetch(path) {
     throw new Error(`Timeout: ${path}`);
   }
 
-  const payload = res?.data?.data;
+  let payload = null;
+  if (res && res.data && res.data.data) {
+    payload = res.data.data;
+  }
 
   if (!payload || typeof payload !== 'object') {
     throw new Error(`Invalid response for ${path}: ${JSON.stringify(res)}`);

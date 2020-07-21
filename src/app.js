@@ -2,6 +2,6 @@ import './foundation/polyfills';
 
 import { render } from './foundation/render';
 
-window.addEventListener('DomContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   render();
 });
