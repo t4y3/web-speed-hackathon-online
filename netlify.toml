@@ -2,3 +2,7 @@
   YARN_VERSION = "1.22.4"
   YARN_FLAGS = "--no-ignore-optional"
   NODE_VERSION = "13.11.0"
+
+[build]
+  functions = "functions"
+  command = "yarn run build:server"

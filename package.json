@@ -10,7 +10,9 @@
     "build:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
-    "serve": "nodemon --exec babel-node lib/server.js"
+    "serve": "nodemon --exec babel-node lib/server.js",
+    "dev": "netlify-lambda serve lib/apis",
+    "build:server": "netlify-lambda build lib/apis"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.4",
@@ -61,6 +63,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "moment-timezone": "^0.5.28",
+    "netlify-lambda": "^2.0.0",
     "normalize.css": "^8.0.1",
     "race-timeout": "^1.0.0",
     "react": "^16.13.1",
@@ -70,6 +73,7 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.5",
+    "serverless-http": "^2.5.0",
     "suitcss-utils": "^3.0.0"
   }
 }
