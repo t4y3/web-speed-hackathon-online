@@ -11,7 +11,7 @@
     "build:webpack-with-mock-data": "cross-env USE_MOCK_DATA=true NODE_ENV=development webpack --config webpack.config.js",
     "fmt": "prettier --write 'src/**/*.{js,css}'",
     "serve": "nodemon --exec babel-node lib/server.js",
-    "dev:analyze": "BUILD_STATS=1 NODE_ENV=production SERVICE_ENV=local run-p dev:*",
+    "dev:analyze": "BUILD_STATS=1 NODE_ENV=production SERVICE_ENV=local webpack --config webpack.config.js",
     "dev": "NODE_ENV=production SERVICE_ENV=local run-p dev:*",
     "dev:css": "NODE_ENV=production SERVICE_ENV=local postcss src/app.css -d dist -w",
     "dev:js": "NODE_ENV=production SERVICE_ENV=local webpack --config webpack.config.js -w",
