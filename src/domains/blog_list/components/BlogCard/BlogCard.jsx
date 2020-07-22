@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ASSETS_PATH, CDN_ASSETS_PATH } from '../../../../constant';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
@@ -8,7 +9,7 @@ export function BlogCard({ blog }) {
     <Link className="blog-list-BlogCard" to={`/${blog.blog_id}`}>
       <div className="blog-list-BlogCard__thumbnail">
         <ProportionalImage
-          src={blog.image}
+          src={blog.image.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70&w=752&h=424'}
           alt=""
           boxAspectRatio={9 / 16}
           roundedAsCardThumbnail

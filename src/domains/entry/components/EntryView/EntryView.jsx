@@ -1,4 +1,5 @@
 import React from 'react';
+import { ASSETS_PATH, CDN_ASSETS_PATH } from '../../../../constant';
 
 function Headline({ level, text }) {
   const tagName = `h${level}`;
@@ -34,7 +35,7 @@ function Image({ url, width, height, caption }) {
         <figure className="entry-EntryView__figure">
           <img
             className="entry-EntryView__img"
-            src={url}
+            src={url.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70'}
             style={{ width, height }}
             alt={caption}
           />

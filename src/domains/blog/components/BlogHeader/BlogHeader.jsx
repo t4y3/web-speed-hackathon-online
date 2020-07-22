@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ASSETS_PATH, CDN_ASSETS_PATH } from '../../../../constant';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
@@ -7,7 +8,7 @@ export function BlogHeader({ blog }) {
   return (
     <header className="blog-BlogHeader">
       <div className="blog-BlogHeader__bg-image">
-        <ProportionalImage src={blog.image} alt="" boxAspectRatio={9 / 16} />
+        <ProportionalImage src={blog.image.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70&w=800&h=450'} alt="" boxAspectRatio={9 / 16} />
       </div>
       <div className="blog-BlogHeader__contents">
         <h1 className="blog-BlogHeader__title">
