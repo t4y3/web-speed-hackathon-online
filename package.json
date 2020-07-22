@@ -25,6 +25,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
     "cross-env": "^7.0.2",
     "express-cache-controller": "^1.1.0",
     "html-webpack-plugin": "^3.2.0",
