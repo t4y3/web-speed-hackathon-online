@@ -12,7 +12,7 @@ export function CommentListItem({ comment }) {
       className="comment-CommentListItem"
     >
       <div className="comment-CommentListItem__avatar">
-        <ProportionalImage src={comment.commenter.image.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70&w=100&h=100'} boxAspectRatio={1} />
+        <ProportionalImage src={comment.commenter.image.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=65&w=100&h=100'} boxAspectRatio={1} />
       </div>
       <div className="comment-CommentListItem__body">
         <h3 className="comment-CommentListItem__commenter">

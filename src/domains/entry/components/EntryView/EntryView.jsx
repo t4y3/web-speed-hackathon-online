@@ -35,7 +35,7 @@ function Image({ url, width, height, caption }) {
         <figure className="entry-EntryView__figure">
           <img
             className="entry-EntryView__img"
-            src={url.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70'}
+            src={url.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=65'}
             style={{ width, height }}
             alt={caption}
           />

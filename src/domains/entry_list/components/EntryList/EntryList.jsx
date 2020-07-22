@@ -18,7 +18,7 @@ export function EntryList({ blogId, list }) {
               >
                 <div className="entry-list-EntryList__thumbnail">
                   <ProportionalImage
-                    src={entry.thumbnail.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=70&w=226&h=136'}
+                    src={entry.thumbnail.replace(ASSETS_PATH, CDN_ASSETS_PATH) + '?fm=webp&q=65&w=226&h=136'}
                     alt=""
                     boxAspectRatio={9 / 16}
                   />
